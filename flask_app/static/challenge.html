@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title id="page-title">Molecular Drawing Behavior Test</title>
+  <link rel="stylesheet" href="app-static/challenge.css?v=7">
+</head>
+<body>
+  <div class="workspace-shell">
+  <header class="page-header">
+    <section class="brand-block">
+      <button id="language-switch" class="language-switch" type="button">中文</button>
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><polygon points="32,5 55,18 55,46 32,59 9,46 9,18 32,5"/><circle cx="32" cy="32" r="13"/><circle cx="32" cy="5" r="3"/><circle cx="55" cy="46" r="3"/><circle cx="9" cy="46" r="3"/></svg>
+      </div>
+      <div class="intro">
+        <span class="eyebrow">MOLECULE DRAWING TEST</span>
+        <h1 id="main-title">Molecular Structure Drawing Test</h1>
+        <p id="main-description">Study the target image and manually reproduce the structure in Ketcher. Structure accuracy and drawing behavior are evaluated separately.</p>
+      </div>
+      <div class="steps" aria-label="Test steps">
+        <span><b>1</b><em id="step-observe">Study structure</em></span><i></i><span><b>2</b><em id="step-draw">Draw manually</em></span><i></i><span><b>3</b><em id="step-finish">Finish analysis</em></span>
+      </div>
+    </section>
+  </header>
+  <div class="workspace-body">
+  <aside class="test-sidebar">
+    <section class="reference-card" aria-label="Target structure">
+      <div class="card-heading"><span class="heading-dot"></span><div><b id="target-title">Target structure</b><small id="target-hint">Import and paste are disabled</small></div></div>
+      <fieldset class="source-selector">
+        <legend id="source-title">Test source</legend>
+        <div class="source-options">
+          <label>
+            <input type="radio" name="challenge-source" value="library" checked>
+            <span id="source-library">Molecule library</span>
+          </label>
+          <label>
+            <input type="radio" name="challenge-source" value="generated">
+            <span id="source-generated">Auto-generated molecule</span>
+          </label>
+        </div>
+      </fieldset>
+      <div class="image-wrap">
+        <div id="loading" class="loading">Generating a random structure…</div>
+        <img id="challenge-image" alt="Molecular structure test image to reproduce" hidden>
+      </div>
+      <div class="reference-actions">
+        <div id="challenge-state" class="state">Preparing test</div>
+        <button id="new-challenge" type="button"><span>↻</span> <span id="new-test-label">New test</span></button>
+      </div>
+    </section>
+    <section id="result" class="result" hidden aria-live="polite">
+      <div class="result-title"><span id="result-title">Test result</span><small id="trusted-label">Server-verified result</small></div>
+      <div><span id="structure-label">Structure check</span><strong id="structure-result">—</strong></div>
+      <div><span id="behavior-label">Behavior verdict</span><strong id="behavior-result">—</strong></div>
+      <small id="result-detail"></small>
+    </section>
+  </aside>
+  <main class="editor-shell">
+    <div id="editor-loading" class="editor-loading" role="status">Loading Ketcher. The first visit downloads the editor resources…</div>
+    <iframe id="editor" title="Ketcher molecular structure editor" allow="clipboard-read 'none'; clipboard-write 'none'"></iframe>
+  </main>
+  </div>
+  </div>
+  <script src="app-static/challenge.js?v=8"></script>
+</body>
+</html>

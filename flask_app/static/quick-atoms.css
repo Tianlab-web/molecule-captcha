@@ -1,0 +1,56 @@
+/* 扩展元素栏；原生元素继续使用 Ketcher 自带样式。 */
+.kqa-native-group {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#kqa-inline {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+#kqa-inline button {
+  display: grid;
+  width: 30px;
+  height: 25px;
+  min-height: 25px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  font: 700 12px/1 "Segoe UI","Microsoft YaHei",sans-serif;
+  transition: .14s ease;
+}
+#kqa-inline button:hover {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+#kqa-inline button.kqa-active {
+  background: linear-gradient(135deg,#8b5cf6,#6366f1);
+  color: #fff;
+  box-shadow: 0 2px 7px rgba(139,92,246,.25);
+}
+#kqa-inline button.kqa-error {
+  background: #fee2e2;
+  color: #dc2626;
+}
+@media(max-height:760px) {
+  #kqa-inline button {
+    height: 22px;
+    min-height: 22px;
+    font-size: 11px;
+  }
+}
+[data-kqa-native-hidden="true"] {
+  display: none !important;
+}
